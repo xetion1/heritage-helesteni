@@ -1,0 +1,101 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Museum {
+  id               String   @id @default(cuid())
+  name             String
+  slug             String   @unique
+  description      String
+  shortDescription String
+  location         String
+  address          String
+  latitude         Float?
+  longitude        Float?
+  openingHours     String
+  priceAdult       Float
+  priceChild       Float
+  priceStudent     Float
+  rating           Float    @default(0)
+  reviewCount      Int      @default(0)
+  features         String // JSON string
+  contact          String?
+  images           String // JSON string
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Workshop {
+  id               String   @id @default(cuid())
+  title            String
+  slug             String   @unique
+  description      String
+  instructorName   String
+  instructorBio    String
+  instructorImage  String?
+  duration         Int // in minutes
+  price            Float
+  maxParticipants  Int
+  difficulty       String // beginner, intermediate, advanced
+  materials        String // JSON string
+  images           String // JSON string
+  category         String
+  available        Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  schedules        WorkshopSchedule[]
+}
+
+model WorkshopSchedule {
+  id             String   @id @default(cuid())
+  workshopId     String
+  workshop       Workshop @relation(fields: [workshopId], references: [id])
+  date           DateTime
+  time           String
+  availableSpots Int
+  bookings       Booking[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Booking {
+  id               String           @id @default(cuid())
+  type             String // museum or workshop
+  scheduleId       String?
+  schedule         WorkshopSchedule? @relation(fields: [scheduleId], references: [id])
+  date             DateTime
+  time             String?
+  adultsCount      Int              @default(0)
+  childrenCount    Int              @default(0)
+  studentsCount    Int              @default(0)
+  customerName     String
+  customerEmail    String
+  customerPhone    String
+  customerMessage  String?
+  totalPrice       Float
+  status           String           @default("pending") // pending, confirmed, cancelled
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  date        DateTime
+  time        String
+  location    String
+  image       String?
+  price       Float    @default(0)
+  category    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

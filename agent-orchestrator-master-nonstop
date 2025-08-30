@@ -1,0 +1,168 @@
+#!/bin/bash
+
+# Agent Orchestrator Master - Nonstop Execution Script
+# This script provides a convenient way to run the orchestrator with specified options
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ORCHESTRATOR_DIR="$SCRIPT_DIR/orchestrator"
+
+# Default configuration
+PARALLEL=true
+AUTO_FIX=true
+MAX_RETRIES=5
+SILENT=false
+STOP_ON_ERROR=false
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --parallel)
+      PARALLEL=true
+      shift
+      ;;
+    --no-parallel)
+      PARALLEL=false
+      shift
+      ;;
+    --auto-fix)
+      AUTO_FIX=true
+      shift
+      ;;
+    --no-auto-fix)
+      AUTO_FIX=false
+      shift
+      ;;
+    --max-retries=*)
+      MAX_RETRIES="${1#*=}"
+      shift
+      ;;
+    --silent)
+      SILENT=true
+      shift
+      ;;
+    --verbose)
+      SILENT=false
+      shift
+      ;;
+    --stop-on-error)
+      STOP_ON_ERROR=true
+      shift
+      ;;
+    --no-stop-on-error)
+      STOP_ON_ERROR=false
+      shift
+      ;;
+    --help|-h)
+      echo "🚀 AGENT ORCHESTRATOR MASTER - NONSTOP VERSION"
+      echo ""
+      echo "Usage: $0 [options]"
+      echo ""
+      echo "Options:"
+      echo "  --parallel              Enable parallel execution (default)"
+      echo "  --no-parallel           Disable parallel execution"
+      echo "  --auto-fix              Enable auto-fix mode (default)"
+      echo "  --no-auto-fix           Disable auto-fix mode"
+      echo "  --max-retries=<n>       Set maximum retry attempts (default: 5)"
+      echo "  --silent                Run in silent mode"
+      echo "  --verbose               Run in verbose mode (default)"
+      echo "  --stop-on-error         Stop execution on critical errors"
+      echo "  --no-stop-on-error      Continue despite errors (default)"
+      echo "  -h, --help              Show this help message"
+      echo ""
+      echo "Examples:"
+      echo "  # Run with default settings"
+      echo "  $0"
+      echo ""
+      echo "  # Run with custom retry limit"
+      echo "  $0 --max-retries=10"
+      echo ""
+      echo "  # Run without parallel execution"
+      echo "  $0 --no-parallel"
+      echo ""
+      echo "  # Run in silent mode for CI/CD"
+      echo "  $0 --silent --stop-on-error"
+      exit 0
+      ;;
+    *)
+      echo "Unknown option: $1"
+      echo "Use --help for usage information"
+      exit 1
+      ;;
+  esac
+done
+
+# Check if Node.js is installed
+if ! command -v node &> /dev/null; then
+    echo "❌ Node.js is not installed. Please install Node.js version 18 or higher."
+    exit 1
+fi
+
+# Check Node.js version
+NODE_VERSION=$(node -v | cut -d'v' -f2 | cut -d'.' -f1)
+if [ "$NODE_VERSION" -lt 18 ]; then
+    echo "❌ Node.js version 18 or higher is required. Current version: $(node -v)"
+    exit 1
+fi
+
+# Navigate to orchestrator directory
+cd "$ORCHESTRATOR_DIR" || exit 1
+
+# Install dependencies if needed
+if [ ! -d "node_modules" ]; then
+    echo "📦 Installing dependencies..."
+    npm install
+fi
+
+# Build TypeScript if needed
+if [ ! -d "dist" ] || [ "$(find . -name '*.ts' -newer dist -print -quit 2>/dev/null)" ]; then
+    echo "🔨 Building TypeScript..."
+    npm run build
+fi
+
+# Construct command arguments
+CMD_ARGS=""
+
+if [ "$PARALLEL" = true ]; then
+    CMD_ARGS="$CMD_ARGS --parallel"
+else
+    CMD_ARGS="$CMD_ARGS --no-parallel"
+fi
+
+if [ "$AUTO_FIX" = true ]; then
+    CMD_ARGS="$CMD_ARGS --auto-fix"
+else
+    CMD_ARGS="$CMD_ARGS --no-auto-fix"
+fi
+
+CMD_ARGS="$CMD_ARGS --max-retries=$MAX_RETRIES"
+
+if [ "$SILENT" = true ]; then
+    CMD_ARGS="$CMD_ARGS --silent"
+fi
+
+if [ "$STOP_ON_ERROR" = true ]; then
+    CMD_ARGS="$CMD_ARGS --stop-on-error"
+else
+    CMD_ARGS="$CMD_ARGS --no-stop-on-error"
+fi
+
+# Run the orchestrator
+echo "🚀 Launching Agent Orchestrator Master - Nonstop Version"
+echo "Configuration: parallel=$PARALLEL, auto-fix=$AUTO_FIX, max-retries=$MAX_RETRIES"
+echo ""
+
+# Execute the orchestrator
+node dist/cli.js $CMD_ARGS
+
+# Capture exit code
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -eq 0 ]; then
+    echo ""
+    echo "✅ Orchestrator completed successfully!"
+else
+    echo ""
+    echo "❌ Orchestrator failed with exit code: $EXIT_CODE"
+fi
+
+exit $EXIT_CODE

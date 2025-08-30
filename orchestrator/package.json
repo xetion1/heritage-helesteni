@@ -1,0 +1,26 @@
+{
+  "name": "agent-orchestrator-master-nonstop",
+  "version": "1.0.0",
+  "description": "Autonomous agent orchestrator with parallel execution and auto-fix capabilities",
+  "main": "dist/agent-orchestrator.js",
+  "bin": {
+    "agent-orchestrator-master-nonstop": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node cli.ts",
+    "start": "node dist/cli.js",
+    "test": "npm run build && npm start -- --max-retries=3",
+    "orchestrate": "ts-node cli.ts --parallel --auto-fix --max-retries=5"
+  },
+  "dependencies": {
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
