@@ -1,0 +1,488 @@
+{
+  "designSystem": {
+    "version": "1.0.0",
+    "name": "Heritage Tourism Design System",
+    "description": "Comprehensive design system for Romanian heritage tourism platform focusing on accessibility, cultural authenticity, and modern UX best practices",
+    
+    "brandIdentity": {
+      "values": ["Cultural Authenticity", "Accessibility", "Storytelling", "Community Connection", "Sustainability"],
+      "personality": ["Warm", "Welcoming", "Educational", "Inspiring", "Trustworthy"],
+      "voice": "Educational yet approachable, respectful of cultural heritage while being modern and inclusive"
+    },
+
+    "colorPalette": {
+      "primary": {
+        "heritage-red": {
+          "50": "#FEF2F2",
+          "100": "#FEE2E2", 
+          "200": "#FECACA",
+          "300": "#FCA5A5",
+          "400": "#F87171",
+          "500": "#B91C1C",
+          "600": "#991B1B",
+          "700": "#7F1D1D",
+          "800": "#651B1B",
+          "900": "#450A0A",
+          "hex": "#B91C1C",
+          "description": "Primary red symbolizing life, vitality, and Romanian cultural heritage"
+        },
+        "sky-blue": {
+          "50": "#F0F9FF",
+          "100": "#E0F2FE",
+          "200": "#BAE6FD",
+          "300": "#7DD3FC",
+          "400": "#38BDF8",
+          "500": "#0EA5E9",
+          "600": "#0284C7",
+          "700": "#0369A1",
+          "800": "#075985",
+          "900": "#0C4A6E",
+          "hex": "#0EA5E9",
+          "description": "Trust, loyalty, wisdom - representing sky and water elements"
+        }
+      },
+      "secondary": {
+        "forest-green": {
+          "50": "#F0FDF4",
+          "100": "#DCFCE7",
+          "200": "#BBF7D0",
+          "300": "#86EFAC",
+          "400": "#4ADE80",
+          "500": "#16A34A",
+          "600": "#15803D",
+          "700": "#166534",
+          "800": "#14532D",
+          "900": "#052E16",
+          "hex": "#16A34A",
+          "description": "Nature, growth, renewal - Tree of Life symbolism"
+        },
+        "golden-amber": {
+          "50": "#FFFBEB",
+          "100": "#FEF3C7",
+          "200": "#FDE68A",
+          "300": "#FCD34D",
+          "400": "#FBBF24",
+          "500": "#F59E0B",
+          "600": "#D97706",
+          "700": "#B45309",
+          "800": "#92400E",
+          "900": "#451A03",
+          "hex": "#F59E0B",
+          "description": "Sun symbolism, warmth, traditional craftsmanship"
+        }
+      },
+      "neutrals": {
+        "warm-gray": {
+          "50": "#FAFAF9",
+          "100": "#F5F5F4",
+          "200": "#E7E5E4",
+          "300": "#D6D3D1",
+          "400": "#A8A29E",
+          "500": "#78716C",
+          "600": "#57534E",
+          "700": "#44403C",
+          "800": "#292524",
+          "900": "#1C1917",
+          "hex": "#78716C"
+        },
+        "pure-white": "#FFFFFF",
+        "soft-cream": "#FEFDF8"
+      },
+      "semantic": {
+        "success": "#10B981",
+        "warning": "#F59E0B", 
+        "error": "#EF4444",
+        "info": "#3B82F6"
+      },
+      "accessibility": {
+        "focus": "#2563EB",
+        "high-contrast": "#000000",
+        "text-primary": "#1C1917",
+        "text-secondary": "#44403C",
+        "text-muted": "#78716C"
+      }
+    },
+
+    "typography": {
+      "fontFamilies": {
+        "heading": {
+          "name": "Playfair Display",
+          "fallback": "'Times New Roman', serif",
+          "description": "Elegant serif for headlines, cultural content headings"
+        },
+        "body": {
+          "name": "Inter",
+          "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "description": "Clean, readable sans-serif for body text and UI"
+        },
+        "accent": {
+          "name": "Crimson Text", 
+          "fallback": "Georgia, serif",
+          "description": "For cultural quotes, traditional text elements"
+        }
+      },
+      "fontSizes": {
+        "xs": "12px",
+        "sm": "14px", 
+        "base": "16px",
+        "lg": "18px",
+        "xl": "20px",
+        "2xl": "24px",
+        "3xl": "30px",
+        "4xl": "36px",
+        "5xl": "48px",
+        "6xl": "60px"
+      },
+      "fontWeights": {
+        "light": 300,
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "extrabold": 800
+      },
+      "lineHeights": {
+        "tight": 1.25,
+        "snug": 1.375,
+        "normal": 1.5,
+        "relaxed": 1.625,
+        "loose": 2
+      },
+      "letterSpacing": {
+        "tighter": "-0.05em",
+        "tight": "-0.025em", 
+        "normal": "0",
+        "wide": "0.025em",
+        "wider": "0.05em",
+        "widest": "0.1em"
+      }
+    },
+
+    "spacing": {
+      "scale": "1.25",
+      "base": 16,
+      "values": {
+        "0": "0",
+        "1": "4px",
+        "2": "8px", 
+        "3": "12px",
+        "4": "16px",
+        "5": "20px",
+        "6": "24px",
+        "8": "32px",
+        "10": "40px",
+        "12": "48px",
+        "16": "64px",
+        "20": "80px",
+        "24": "96px",
+        "32": "128px",
+        "40": "160px",
+        "48": "192px",
+        "64": "256px"
+      }
+    },
+
+    "breakpoints": {
+      "mobile": {
+        "min": "320px",
+        "max": "767px"
+      },
+      "tablet": {
+        "min": "768px", 
+        "max": "1023px"
+      },
+      "desktop": {
+        "min": "1024px",
+        "max": "1439px"
+      },
+      "large": {
+        "min": "1440px"
+      }
+    },
+
+    "components": {
+      "buttons": {
+        "primary": {
+          "backgroundColor": "#B91C1C",
+          "color": "#FFFFFF",
+          "padding": "12px 24px",
+          "borderRadius": "8px",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "border": "none",
+          "minHeight": "44px",
+          "hover": {
+            "backgroundColor": "#991B1B"
+          },
+          "focus": {
+            "outline": "2px solid #2563EB",
+            "outlineOffset": "2px"
+          },
+          "disabled": {
+            "backgroundColor": "#D6D3D1",
+            "color": "#78716C"
+          }
+        },
+        "secondary": {
+          "backgroundColor": "transparent",
+          "color": "#B91C1C", 
+          "padding": "12px 24px",
+          "borderRadius": "8px",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "border": "2px solid #B91C1C",
+          "minHeight": "44px",
+          "hover": {
+            "backgroundColor": "#FEF2F2"
+          }
+        },
+        "ghost": {
+          "backgroundColor": "transparent",
+          "color": "#44403C",
+          "padding": "12px 16px",
+          "borderRadius": "8px",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "border": "none",
+          "minHeight": "44px",
+          "hover": {
+            "backgroundColor": "#F5F5F4"
+          }
+        }
+      },
+      "cards": {
+        "default": {
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": "12px",
+          "padding": "24px",
+          "boxShadow": "0 1px 3px rgba(0, 0, 0, 0.1)",
+          "border": "1px solid #E7E5E4"
+        },
+        "elevated": {
+          "backgroundColor": "#FFFFFF", 
+          "borderRadius": "16px",
+          "padding": "32px",
+          "boxShadow": "0 10px 25px rgba(0, 0, 0, 0.1)",
+          "border": "none"
+        },
+        "heritage": {
+          "backgroundColor": "#FEFDF8",
+          "borderRadius": "12px",
+          "padding": "24px",
+          "border": "2px solid #F59E0B",
+          "position": "relative"
+        }
+      },
+      "inputs": {
+        "default": {
+          "padding": "12px 16px",
+          "borderRadius": "8px",
+          "border": "2px solid #D6D3D1",
+          "fontSize": "16px",
+          "minHeight": "44px",
+          "focus": {
+            "borderColor": "#2563EB",
+            "outline": "none"
+          },
+          "error": {
+            "borderColor": "#EF4444"
+          }
+        }
+      },
+      "navigation": {
+        "header": {
+          "height": "72px",
+          "backgroundColor": "#FFFFFF",
+          "boxShadow": "0 1px 3px rgba(0, 0, 0, 0.1)",
+          "padding": "0 24px",
+          "position": "sticky"
+        },
+        "breadcrumb": {
+          "fontSize": "14px",
+          "color": "#78716C",
+          "separator": "/"
+        },
+        "sidebar": {
+          "width": "280px",
+          "backgroundColor": "#FAFAF9",
+          "padding": "24px"
+        }
+      }
+    },
+
+    "layoutPatterns": {
+      "heroSection": {
+        "minHeight": "60vh",
+        "backgroundSize": "cover",
+        "backgroundPosition": "center",
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "textAlign": "center",
+        "overlay": "rgba(28, 25, 23, 0.4)"
+      },
+      "contentGrid": {
+        "display": "grid",
+        "gap": "32px",
+        "gridTemplateColumns": {
+          "mobile": "1fr",
+          "tablet": "repeat(2, 1fr)",
+          "desktop": "repeat(3, 1fr)"
+        }
+      },
+      "booking": {
+        "maxWidth": "480px",
+        "margin": "0 auto",
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": "16px",
+        "padding": "32px",
+        "boxShadow": "0 10px 25px rgba(0, 0, 0, 0.1)"
+      }
+    },
+
+    "culturalMotifs": {
+      "patterns": {
+        "rhombus": {
+          "description": "Sky/Universe symbol",
+          "usage": "Decorative borders, section dividers"
+        },
+        "zigzag": {
+          "description": "Lightning/energy symbol", 
+          "usage": "Dynamic elements, progress indicators"
+        },
+        "cross": {
+          "description": "Balance and connection",
+          "usage": "Navigation elements, form layouts"
+        },
+        "treeOfLife": {
+          "description": "Eternal life, spiritual growth",
+          "usage": "Logo elements, cultural content sections"
+        }
+      },
+      "colors": {
+        "traditional": ["#B91C1C", "#0EA5E9", "#16A34A"],
+        "modern": ["#991B1B", "#0284C7", "#15803D"],
+        "accents": ["#F59E0B", "#FBBF24"]
+      }
+    },
+
+    "accessibility": {
+      "wcagLevel": "AA",
+      "colorContrast": {
+        "normal": "4.5:1",
+        "large": "3:1"
+      },
+      "focusIndicators": {
+        "color": "#2563EB",
+        "width": "2px",
+        "style": "solid",
+        "offset": "2px"
+      },
+      "minimumTouchTarget": "44px",
+      "readingLevel": "Grade 8-9",
+      "languages": ["Romanian", "English", "German", "French"],
+      "features": [
+        "Screen reader compatibility",
+        "Keyboard navigation",
+        "High contrast mode", 
+        "Text scaling up to 200%",
+        "Alt text for all images",
+        "Captions for videos",
+        "Clear error messages",
+        "Progress indicators",
+        "Skip links"
+      ]
+    },
+
+    "animations": {
+      "duration": {
+        "fast": "150ms",
+        "normal": "300ms", 
+        "slow": "500ms"
+      },
+      "easing": {
+        "ease": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "easeIn": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+        "easeOut": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        "easeInOut": "cubic-bezier(0.645, 0.045, 0.355, 1)"
+      },
+      "principles": [
+        "Subtle and purposeful",
+        "Respect user preferences (prefers-reduced-motion)",
+        "Cultural storytelling through micro-interactions",
+        "Performance optimized"
+      ]
+    },
+
+    "iconography": {
+      "style": "Outline",
+      "strokeWidth": "1.5px",
+      "sizes": {
+        "sm": "16px",
+        "md": "20px", 
+        "lg": "24px",
+        "xl": "32px"
+      },
+      "cultural": {
+        "heritage": "Traditional Romanian symbols adapted for modern use",
+        "tourism": "Universal travel and location icons",
+        "accessibility": "Standard accessibility symbols"
+      }
+    },
+
+    "contentStrategy": {
+      "writingPrinciples": [
+        "Clear and concise language",
+        "Cultural sensitivity and respect",
+        "Multilingual considerations",
+        "Accessible language (Grade 8-9 reading level)",
+        "Storytelling approach to heritage content"
+      ],
+      "imageGuidelines": {
+        "aspectRatios": ["16:9", "4:3", "1:1"],
+        "altTextRequired": true,
+        "culturalSensitivity": "Always respectful representation",
+        "quality": "High resolution for heritage content",
+        "optimization": "WebP format with fallbacks"
+      }
+    },
+
+    "performanceTargets": {
+      "loadTime": "< 3 seconds",
+      "firstContentfulPaint": "< 1.5 seconds",
+      "cumulativeLayoutShift": "< 0.1",
+      "largestContentfulPaint": "< 2.5 seconds"
+    },
+
+    "mobilePatterns": {
+      "navigation": "Bottom tab bar with hamburger menu",
+      "search": "Prominent search with filters",
+      "booking": "Progressive disclosure with clear steps",
+      "content": "Card-based layout with thumb-friendly interactions",
+      "images": "Optimized lazy loading with placeholders"
+    },
+
+    "designTokens": {
+      "shadows": {
+        "sm": "0 1px 2px rgba(0, 0, 0, 0.05)",
+        "md": "0 4px 6px rgba(0, 0, 0, 0.07)",
+        "lg": "0 10px 15px rgba(0, 0, 0, 0.1)",
+        "xl": "0 20px 25px rgba(0, 0, 0, 0.1)"
+      },
+      "borders": {
+        "radius": {
+          "sm": "4px",
+          "md": "8px",
+          "lg": "12px", 
+          "xl": "16px",
+          "full": "9999px"
+        },
+        "width": {
+          "thin": "1px",
+          "normal": "2px", 
+          "thick": "4px"
+        }
+      }
+    }
+  }
+}
