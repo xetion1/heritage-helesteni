@@ -1,0 +1,3 @@
+// FAQ system - types
+
+export {};

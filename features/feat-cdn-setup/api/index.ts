@@ -1,0 +1,3 @@
+// Setup CDN - api
+
+export {};

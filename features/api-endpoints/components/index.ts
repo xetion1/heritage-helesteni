@@ -1,0 +1,3 @@
+// API endpoints - components
+
+export {};

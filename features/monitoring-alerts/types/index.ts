@@ -1,0 +1,3 @@
+// Monitoring alerts - types
+
+export {};

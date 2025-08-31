@@ -1,0 +1,3 @@
+// Setup Elasticsearch - types
+
+export {};

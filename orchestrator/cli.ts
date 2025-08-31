@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { AgentOrchestrator } from './agent-orchestrator';
+import { RealAgentOrchestrator } from './agent-orchestrator-real';
 import { parseArgs } from 'util';
 
 interface CLIOptions {
@@ -121,7 +122,8 @@ async function main(): Promise<void> {
   });
   console.log('');
 
-  const orchestrator = new AgentOrchestrator({
+  // Use the real orchestrator with 230+ tasks
+  const orchestrator = new RealAgentOrchestrator({
     parallelExecution: options.parallel,
     autoFix: options.autoFix,
     maxRetries: options.maxRetries,

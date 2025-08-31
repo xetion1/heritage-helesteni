@@ -1,0 +1,3 @@
+// Image optimization - components
+
+export {};

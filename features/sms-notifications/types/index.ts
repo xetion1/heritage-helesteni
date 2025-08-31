@@ -1,0 +1,3 @@
+// SMS notifications - types
+
+export {};

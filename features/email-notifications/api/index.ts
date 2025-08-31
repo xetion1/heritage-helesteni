@@ -1,0 +1,3 @@
+// Email notifications - api
+
+export {};

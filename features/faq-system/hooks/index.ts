@@ -1,0 +1,3 @@
+// FAQ system - hooks
+
+export {};

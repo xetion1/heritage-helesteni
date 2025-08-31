@@ -1,0 +1,3 @@
+// Currency conversion - types
+
+export {};

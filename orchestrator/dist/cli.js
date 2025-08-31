@@ -2,7 +2,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.main = main;
-const agent_orchestrator_1 = require("./agent-orchestrator");
+const agent_orchestrator_real_1 = require("./agent-orchestrator-real");
 function parseCommandLineArgs() {
     const options = {
         parallel: true,
@@ -105,7 +105,8 @@ async function main() {
         stopOnError: options.stopOnError
     });
     console.log('');
-    const orchestrator = new agent_orchestrator_1.AgentOrchestrator({
+    // Use the real orchestrator with 230+ tasks
+    const orchestrator = new agent_orchestrator_real_1.RealAgentOrchestrator({
         parallelExecution: options.parallel,
         autoFix: options.autoFix,
         maxRetries: options.maxRetries,

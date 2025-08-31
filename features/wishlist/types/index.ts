@@ -1,0 +1,3 @@
+// Wishlist feature - types
+
+export {};

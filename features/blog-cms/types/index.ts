@@ -1,0 +1,3 @@
+// Blog CMS - types
+
+export {};

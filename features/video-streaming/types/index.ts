@@ -1,0 +1,3 @@
+// Video streaming - types
+
+export {};

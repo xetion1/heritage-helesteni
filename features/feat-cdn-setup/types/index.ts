@@ -1,0 +1,3 @@
+// Setup CDN - types
+
+export {};

@@ -1,0 +1,3 @@
+// Newsletter system - types
+
+export {};

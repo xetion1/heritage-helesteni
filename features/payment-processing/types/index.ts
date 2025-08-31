@@ -1,0 +1,3 @@
+// Payment processing - types
+
+export {};

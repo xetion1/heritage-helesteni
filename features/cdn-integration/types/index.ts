@@ -1,0 +1,3 @@
+// CDN integration - types
+
+export {};

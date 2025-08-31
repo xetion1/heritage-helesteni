@@ -1,0 +1,3 @@
+// Sitemap generation - types
+
+export {};

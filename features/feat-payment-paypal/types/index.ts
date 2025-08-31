@@ -1,0 +1,3 @@
+// Integrate PayPal - types
+
+export {};

@@ -1,0 +1,3 @@
+// Wishlist feature - api
+
+export {};

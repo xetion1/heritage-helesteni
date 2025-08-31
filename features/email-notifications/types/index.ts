@@ -1,0 +1,3 @@
+// Email notifications - types
+
+export {};

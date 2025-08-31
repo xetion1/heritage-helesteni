@@ -1,0 +1,3 @@
+// SEO optimization - hooks
+
+export {};

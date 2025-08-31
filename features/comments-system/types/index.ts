@@ -1,0 +1,3 @@
+// Comments system - types
+
+export {};
